@@ -1,0 +1,25 @@
+# docker-env.yml
+vars:
+  NUM_DATABASES: 1
+  NUM_WORKERS:   10
+
+auth:
+  ca-private-key-path:  /my/key.pem
+
+driver:
+  virtualbox:
+
+engine:
+  install-url:          https://get.docker.com
+  storage-driver:       aufs
+
+swarm:
+  strategy:  spread
+  discovery: token://1234
+
+machines:
+  master:
+    instances: 1
+    swarm:
+      master:  true
+

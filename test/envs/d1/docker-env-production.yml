@@ -1,0 +1,11 @@
+# docker-env.yml
+vars:
+  NUM_DATABASES: 1
+  NUM_WORKERS:   3
+  NUM_QUEUES:    2
+
+machines:
+  worker:
+    instances: $(NUM_WORKERS)
+    swarm:
+      discovery:  token://9999
